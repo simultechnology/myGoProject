@@ -1,8 +1,12 @@
 package main
 
-import ( "fmt"
-	"github.com/simultechnology/gosample"
+import (
+	f "fmt"
+	_ "github.com/simultechnology/gosample"
+	. "strings"
 )
+
 func main() {
-	fmt.Println(gosample.Message) // hello world
+	f.Println(gosample.Message) // hello world
+
 }
