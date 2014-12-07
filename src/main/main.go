@@ -7,6 +7,7 @@ import (
 	"os"
 	"log"
 	"bufio"
+	"strconv"
 )
 
 func main() {
@@ -30,12 +31,15 @@ func main() {
 	// fileから内容を読み込む
 	file, err := os.Open("src/data/sample.txt")
 
+	sum := 0
 	if err != nil {
 		log.Fatal(err)
 	} else {
 		scanner := bufio.NewScanner(file)
 		for scanner.Scan() {
-			f.Println(scanner.Text())
+			m, _ := strconv.Atoi(scanner.Text())
+			sum += m
 		}
 	}
+	f.Printf("sum : %d\n", sum)
 }
